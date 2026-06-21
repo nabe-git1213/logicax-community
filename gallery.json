@@ -1,5 +1,19 @@
 {
   "schemaVersion": 1,
   "updatedAt": "2026-06-21",
-  "packs": []
+  "packs": [
+    {
+      "id": "test-pack-001",
+      "title": "テスト式パック",
+      "titleEn": "Test Formula Pack",
+      "author": "@★あなたのGitHubユーザー名★",
+      "category": "テスト",
+      "categoryEn": "Test",
+      "summary": "動作確認用のサンプル式です。",
+      "summaryEn": "Sample formulas for verifying the gallery feature.",
+      "language": "ja",
+      "downloadURL": "https://raw.githubusercontent.com/nabe-git1213/logicax-community/refs/heads/main/packs/test-pack.json",
+      "addedAt": "2026-06-21"
+    }
+  ]
 }
