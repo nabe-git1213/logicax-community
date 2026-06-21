@@ -1,0 +1,532 @@
+{
+  "appName" : "LogiCaX",
+  "customCategories" : [
+
+  ],
+  "exportedAt" : "2026-06-21T10:48:22Z",
+  "formulas" : [
+    {
+      "actionButtons" : [
+
+      ],
+      "category" : "料理",
+      "comment" : "元のレシピの分量を、作りたい人数に合わせて自動でスケールします。\n例: 4人前のレシピで小麦粉200g → 6人前なら 200 × 6 ÷ 4 = 300g。\n結果欄を直接編集して、必要分量から元の分量を逆算することもできます。",
+      "expression" : "v1 * v3 \/ v2",
+      "id" : "C0001001-0000-4000-A000-000000000001",
+      "localizedCategory" : {
+        "english" : "Cooking"
+      },
+      "localizedComment" : {
+        "english" : "Scales the amount in a recipe from the original number of servings to a target number of servings.\nExample: 200g of flour for 4 servings → for 6 servings, 200 × 6 ÷ 4 = 300g.\nYou can also edit the result field to back-calculate the original amount."
+      },
+      "localizedName" : {
+        "english" : "Recipe Scaler"
+      },
+      "name" : "レシピのスケール変更",
+      "resultDecimalPlaces" : 2,
+      "resultLayoutItems" : [
+
+      ],
+      "resultPosition" : "top",
+      "results" : [
+        {
+          "assessmentRules" : [
+
+          ],
+          "decimalPlaces" : 2,
+          "expression" : "v1 * v3 \/ v2",
+          "id" : "C0001001-0000-4000-A000-0000000000B1",
+          "isBidirectional" : true,
+          "isVisible" : true,
+          "linkedVariableLabel" : "v1",
+          "localizedName" : {
+            "english" : "Required Amount"
+          },
+          "localizedUnit" : {
+            "english" : ""
+          },
+          "name" : "必要分量",
+          "unit" : "",
+          "valueKind" : "number",
+          "variableName" : "r1"
+        }
+      ],
+      "riskCategory" : "none",
+      "variableLayoutItems" : [
+
+      ],
+      "variables" : [
+        {
+          "defaultValue" : "",
+          "id" : "C0001001-0000-4000-A000-0000000000A1",
+          "inputKind" : "number",
+          "label" : "元の分量",
+          "localizedLabel" : {
+            "english" : "Original Amount"
+          },
+          "localizedUnit" : {
+            "english" : ""
+          },
+          "options" : [
+
+          ],
+          "unit" : "",
+          "variableName" : "v1"
+        },
+        {
+          "defaultValue" : "4",
+          "id" : "C0001001-0000-4000-A000-0000000000A2",
+          "inputKind" : "number",
+          "label" : "元の人数",
+          "localizedLabel" : {
+            "english" : "Original Servings"
+          },
+          "localizedUnit" : {
+            "english" : "servings"
+          },
+          "options" : [
+
+          ],
+          "unit" : "人",
+          "variableName" : "v2"
+        },
+        {
+          "defaultValue" : "",
+          "id" : "C0001001-0000-4000-A000-0000000000A3",
+          "inputKind" : "number",
+          "label" : "作りたい人数",
+          "localizedLabel" : {
+            "english" : "Target Servings"
+          },
+          "localizedUnit" : {
+            "english" : "servings"
+          },
+          "options" : [
+
+          ],
+          "unit" : "人",
+          "variableName" : "v3"
+        }
+      ]
+    },
+    {
+      "actionButtons" : [
+
+      ],
+      "category" : "料理",
+      "comment" : "日本と米国で差が出やすい料理用の容量単位を相互換算します。\n換算の基準（mL）: 日本 cup = 200、日本 tbsp = 15、日本 tsp = 5、US cup = 236.588、US tbsp = 14.787、US tsp = 4.929、US fl oz = 29.574、1 mL = 1、1 L = 1000。\n元の単位と先の単位は同じ一覧から選びます。これは任意の組み合わせで換算するための仕様です。",
+      "expression" : "v1 * v2 \/ v3",
+      "id" : "C0001002-0000-4000-A000-000000000002",
+      "localizedCategory" : {
+        "english" : "Cooking"
+      },
+      "localizedComment" : {
+        "english" : "Converts cooking volume units that often differ between Japan and the US.\nReference (in mL): Japan cup = 200, Japan tbsp = 15, Japan tsp = 5, US cup = 236.588, US tbsp = 14.787, US tsp = 4.929, US fl oz = 29.574, 1 mL = 1, 1 L = 1000.\nFrom and To use the same unit list so any pair can be converted."
+      },
+      "localizedName" : {
+        "english" : "Cooking Volume Converter (Japan \/ US)"
+      },
+      "name" : "料理用容量の換算（日本・US）",
+      "resultDecimalPlaces" : 3,
+      "resultLayoutItems" : [
+
+      ],
+      "resultPosition" : "top",
+      "results" : [
+        {
+          "assessmentRules" : [
+
+          ],
+          "decimalPlaces" : 3,
+          "expression" : "v1 * v2 \/ v3",
+          "id" : "C0001002-0000-4000-A000-0000000000B1",
+          "isBidirectional" : false,
+          "isVisible" : true,
+          "linkedVariableLabel" : "",
+          "localizedName" : {
+            "english" : "Converted Amount"
+          },
+          "localizedUnit" : {
+            "english" : "to unit"
+          },
+          "name" : "換算後の量",
+          "unit" : "先の単位",
+          "valueKind" : "number",
+          "variableName" : "r1"
+        }
+      ],
+      "riskCategory" : "none",
+      "variableLayoutItems" : [
+
+      ],
+      "variables" : [
+        {
+          "defaultValue" : "1",
+          "id" : "C0001002-0000-4000-A000-0000000000A1",
+          "inputKind" : "number",
+          "label" : "量",
+          "localizedLabel" : {
+            "english" : "Amount"
+          },
+          "localizedUnit" : {
+            "english" : ""
+          },
+          "options" : [
+
+          ],
+          "unit" : "",
+          "variableName" : "v1"
+        },
+        {
+          "defaultValue" : "236.588",
+          "id" : "C0001002-0000-4000-A000-0000000000A2",
+          "inputKind" : "radio",
+          "label" : "元の単位",
+          "localizedLabel" : {
+            "english" : "From Unit"
+          },
+          "localizedUnit" : {
+            "english" : ""
+          },
+          "options" : [
+            {
+              "id" : "C0001002-0000-4000-A000-0000000000D1",
+              "localizedTitle" : {
+                "english" : "cup (Japan)"
+              },
+              "title" : "cup (日本)",
+              "value" : 200
+            },
+            {
+              "id" : "C0001002-0000-4000-A000-0000000000D2",
+              "localizedTitle" : {
+                "english" : "tbsp (Japan)"
+              },
+              "title" : "tbsp \/ 大さじ (日本)",
+              "value" : 15
+            },
+            {
+              "id" : "C0001002-0000-4000-A000-0000000000D3",
+              "localizedTitle" : {
+                "english" : "tsp (Japan)"
+              },
+              "title" : "tsp \/ 小さじ (日本)",
+              "value" : 5
+            },
+            {
+              "id" : "C0001002-0000-4000-A000-0000000000D4",
+              "localizedTitle" : {
+                "english" : "cup (US)"
+              },
+              "title" : "cup (US)",
+              "value" : 236.588
+            },
+            {
+              "id" : "C0001002-0000-4000-A000-0000000000D5",
+              "localizedTitle" : {
+                "english" : "tbsp (US)"
+              },
+              "title" : "tbsp (US)",
+              "value" : 14.787
+            },
+            {
+              "id" : "C0001002-0000-4000-A000-0000000000D6",
+              "localizedTitle" : {
+                "english" : "tsp (US)"
+              },
+              "title" : "tsp (US)",
+              "value" : 4.929
+            },
+            {
+              "id" : "C0001002-0000-4000-A000-0000000000D7",
+              "localizedTitle" : {
+                "english" : "fl oz (US)"
+              },
+              "title" : "fl oz (US)",
+              "value" : 29.574
+            },
+            {
+              "id" : "C0001002-0000-4000-A000-0000000000D8",
+              "localizedTitle" : {
+                "english" : "mL"
+              },
+              "title" : "mL",
+              "value" : 1
+            },
+            {
+              "id" : "C0001002-0000-4000-A000-0000000000D9",
+              "localizedTitle" : {
+                "english" : "L"
+              },
+              "title" : "L",
+              "value" : 1000
+            }
+          ],
+          "unit" : "",
+          "variableName" : "v2"
+        },
+        {
+          "defaultValue" : "1",
+          "id" : "C0001002-0000-4000-A000-0000000000A3",
+          "inputKind" : "radio",
+          "label" : "先の単位",
+          "localizedLabel" : {
+            "english" : "To Unit"
+          },
+          "localizedUnit" : {
+            "english" : ""
+          },
+          "options" : [
+            {
+              "id" : "C0001002-0000-4000-A000-0000000000DA",
+              "localizedTitle" : {
+                "english" : "cup (Japan)"
+              },
+              "title" : "cup (日本)",
+              "value" : 200
+            },
+            {
+              "id" : "C0001002-0000-4000-A000-0000000000DB",
+              "localizedTitle" : {
+                "english" : "tbsp (Japan)"
+              },
+              "title" : "tbsp \/ 大さじ (日本)",
+              "value" : 15
+            },
+            {
+              "id" : "C0001002-0000-4000-A000-0000000000DC",
+              "localizedTitle" : {
+                "english" : "tsp (Japan)"
+              },
+              "title" : "tsp \/ 小さじ (日本)",
+              "value" : 5
+            },
+            {
+              "id" : "C0001002-0000-4000-A000-0000000000DD",
+              "localizedTitle" : {
+                "english" : "cup (US)"
+              },
+              "title" : "cup (US)",
+              "value" : 236.588
+            },
+            {
+              "id" : "C0001002-0000-4000-A000-0000000000DE",
+              "localizedTitle" : {
+                "english" : "tbsp (US)"
+              },
+              "title" : "tbsp (US)",
+              "value" : 14.787
+            },
+            {
+              "id" : "C0001002-0000-4000-A000-0000000000DF",
+              "localizedTitle" : {
+                "english" : "tsp (US)"
+              },
+              "title" : "tsp (US)",
+              "value" : 4.929
+            },
+            {
+              "id" : "C0001002-0000-4000-A000-0000000000E0",
+              "localizedTitle" : {
+                "english" : "fl oz (US)"
+              },
+              "title" : "fl oz (US)",
+              "value" : 29.574
+            },
+            {
+              "id" : "C0001002-0000-4000-A000-0000000000E1",
+              "localizedTitle" : {
+                "english" : "mL"
+              },
+              "title" : "mL",
+              "value" : 1
+            },
+            {
+              "id" : "C0001002-0000-4000-A000-0000000000E2",
+              "localizedTitle" : {
+                "english" : "L"
+              },
+              "title" : "L",
+              "value" : 1000
+            }
+          ],
+          "unit" : "",
+          "variableName" : "v3"
+        }
+      ]
+    },
+    {
+      "actionButtons" : [
+
+      ],
+      "category" : "料理",
+      "comment" : "海外レシピや食材パッケージの重量単位を相互換算します。\n換算の基準（g）: 1 oz = 28.3495、1 lb = 453.592、1 g = 1、1 kg = 1000。\n変換したい量・元の単位・先の単位を選んでください。",
+      "expression" : "v1 * v2 \/ v3",
+      "id" : "C0001003-0000-4000-A000-000000000003",
+      "localizedCategory" : {
+        "english" : "Cooking"
+      },
+      "localizedComment" : {
+        "english" : "Converts between cooking weight units.\nReference (in g): 1 oz = 28.3495, 1 lb = 453.592, 1 g = 1, 1 kg = 1000.\nEnter the amount and choose source \/ target units."
+      },
+      "localizedName" : {
+        "english" : "Weight Converter (oz \/ lb \/ g \/ kg)"
+      },
+      "name" : "重量の換算（oz・lb・g・kg）",
+      "resultDecimalPlaces" : 3,
+      "resultLayoutItems" : [
+
+      ],
+      "resultPosition" : "top",
+      "results" : [
+        {
+          "assessmentRules" : [
+
+          ],
+          "decimalPlaces" : 3,
+          "expression" : "v1 * v2 \/ v3",
+          "id" : "C0001003-0000-4000-A000-0000000000B1",
+          "isBidirectional" : false,
+          "isVisible" : true,
+          "linkedVariableLabel" : "",
+          "localizedName" : {
+            "english" : "Converted Weight"
+          },
+          "localizedUnit" : {
+            "english" : "to unit"
+          },
+          "name" : "換算後の重量",
+          "unit" : "先の単位",
+          "valueKind" : "number",
+          "variableName" : "r1"
+        }
+      ],
+      "riskCategory" : "none",
+      "variableLayoutItems" : [
+
+      ],
+      "variables" : [
+        {
+          "defaultValue" : "1",
+          "id" : "C0001003-0000-4000-A000-0000000000A1",
+          "inputKind" : "number",
+          "label" : "量",
+          "localizedLabel" : {
+            "english" : "Amount"
+          },
+          "localizedUnit" : {
+            "english" : ""
+          },
+          "options" : [
+
+          ],
+          "unit" : "",
+          "variableName" : "v1"
+        },
+        {
+          "defaultValue" : "28.3495",
+          "id" : "C0001003-0000-4000-A000-0000000000A2",
+          "inputKind" : "radio",
+          "label" : "元の単位",
+          "localizedLabel" : {
+            "english" : "From Unit"
+          },
+          "localizedUnit" : {
+            "english" : ""
+          },
+          "options" : [
+            {
+              "id" : "C0001003-0000-4000-A000-0000000000D1",
+              "localizedTitle" : {
+                "english" : "oz"
+              },
+              "title" : "oz",
+              "value" : 28.3495
+            },
+            {
+              "id" : "C0001003-0000-4000-A000-0000000000D2",
+              "localizedTitle" : {
+                "english" : "lb"
+              },
+              "title" : "lb",
+              "value" : 453.592
+            },
+            {
+              "id" : "C0001003-0000-4000-A000-0000000000D3",
+              "localizedTitle" : {
+                "english" : "g"
+              },
+              "title" : "g",
+              "value" : 1
+            },
+            {
+              "id" : "C0001003-0000-4000-A000-0000000000D4",
+              "localizedTitle" : {
+                "english" : "kg"
+              },
+              "title" : "kg",
+              "value" : 1000
+            }
+          ],
+          "unit" : "",
+          "variableName" : "v2"
+        },
+        {
+          "defaultValue" : "1",
+          "id" : "C0001003-0000-4000-A000-0000000000A3",
+          "inputKind" : "radio",
+          "label" : "先の単位",
+          "localizedLabel" : {
+            "english" : "To Unit"
+          },
+          "localizedUnit" : {
+            "english" : ""
+          },
+          "options" : [
+            {
+              "id" : "C0001003-0000-4000-A000-0000000000D5",
+              "localizedTitle" : {
+                "english" : "oz"
+              },
+              "title" : "oz",
+              "value" : 28.3495
+            },
+            {
+              "id" : "C0001003-0000-4000-A000-0000000000D6",
+              "localizedTitle" : {
+                "english" : "lb"
+              },
+              "title" : "lb",
+              "value" : 453.592
+            },
+            {
+              "id" : "C0001003-0000-4000-A000-0000000000D7",
+              "localizedTitle" : {
+                "english" : "g"
+              },
+              "title" : "g",
+              "value" : 1
+            },
+            {
+              "id" : "C0001003-0000-4000-A000-0000000000D8",
+              "localizedTitle" : {
+                "english" : "kg"
+              },
+              "title" : "kg",
+              "value" : 1000
+            }
+          ],
+          "unit" : "",
+          "variableName" : "v3"
+        }
+      ]
+    }
+  ],
+  "settings" : {
+    "appLanguageRaw" : "system",
+    "categorySortModeRaw" : "custom",
+    "favoriteFormulaIDsData" : "[]",
+    "lastOpenedFormulaDatesData" : "{\"90005004-0000-4000-A000-000000000004\":1782005343.273696,\"B0001001-0000-4000-A000-000000000001\":1782019098.82219,\"C0001006-0000-4000-A000-000000000006\":1782008549.655655,\"F0001001-0000-4000-A000-000000000001\":1782013250.6787128,\"D0004001-0000-4000-A000-000000000001\":1781961210.3403502,\"B0001009-0000-4000-A000-000000000009\":1782022220.7883902,\"C0001003-0000-4000-A000-000000000003\":1782006954.6415381,\"90005002-0000-4000-A000-000000000002\":1781982047.038724,\"90005001-0000-4000-A000-000000000001\":1781982030.364022,\"D0004004-0000-4000-A000-000000000004\":1781961236.093555,\"F0001008-0000-4000-A000-000000000008\":1782014275.170518,\"90005005-0000-4000-A000-000000000005\":1781982008.734554,\"C0001002-0000-4000-A000-000000000002\":1782006722.1386452,\"B0001007-0000-4000-A000-000000000007\":1782022137.657012,\"B0001005-0000-4000-A000-000000000005\":1782022885.1847348,\"90005007-0000-4000-A000-000000000007\":1781982015.546021,\"A0002007-0000-4000-A000-000000000007\":1782022971.8516011,\"D0004006-0000-4000-A000-000000000006\":1781961310.342063,\"F0001006-0000-4000-A000-000000000006\":1782014107.116646,\"D0004007-0000-4000-A000-000000000007\":1781958708.399047,\"F0001009-0000-4000-A000-000000000009\":1782014321.060018,\"C0001005-0000-4000-A000-000000000005\":1782007037.1377459,\"F0001004-0000-4000-A000-000000000004\":1782014071.555027,\"90005003-0000-4000-A000-000000000003\":1781981985.116873,\"F0001007-0000-4000-A000-000000000007\":1782014130.221405,\"D0004005-0000-4000-A000-000000000005\":1781961255.963568,\"B0001002-0000-4000-A000-000000000002\":1782022004.420313,\"C0001004-0000-4000-A000-000000000004\":1782007851.715969,\"A0002004-0000-4000-A000-000000000004\":1781949437.505553,\"F0001014-0000-4000-A000-00000000000E\":1782019011.982288,\"F0001010-0000-4000-A000-00000000000A\":1782014487.042567,\"F0001005-0000-4000-A000-000000000005\":1782014084.381719,\"E0003002-0000-4000-A000-000000000002\":1782038828.789268,\"E0003006-0000-4000-A000-000000000006\":1781958673.1047912,\"C0001001-0000-4000-A000-000000000001\":1782006718.317388,\"F0001002-0000-4000-A000-000000000002\":1782013268.136077,\"A0002001-0000-4000-A000-000000000001\":1781931938.71812,\"B0001003-0000-4000-A000-000000000003\":1782019113.915316,\"F0001003-0000-4000-A000-000000000003\":1782014058.76583,\"D0004008-0000-4000-A000-000000000008\":1781961281.849866}"
+  },
+  "version" : 1
+}
